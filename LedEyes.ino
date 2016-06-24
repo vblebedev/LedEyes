@@ -1,4 +1,6 @@
 //We always have to include the LedControl library
+
+//FIXME: remove using this library
 #include "LedControl.h"
 
 /*
@@ -527,6 +529,8 @@ void roundSpin(int times)
   This method sets values to matrix row
   Performs 180 rotation if needed
 */
+
+//FIXME: remove addr, make for both LEDs in one transaction
 void setRow(int addr, int row, byte rowValue)
 {
   if (((addr == 0) && (rotateMatrix0)) || (addr == 1 && rotateMatrix1))
@@ -543,6 +547,8 @@ void setRow(int addr, int row, byte rowValue)
   Reverse bits in byte
   http://www.nrtm.org/index.php/2013/07/25/reverse-bits-in-a-byte/
 */
+
+//FIXME: 
 byte bitswap (byte x)
 {
   byte result;
