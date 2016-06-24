@@ -58,32 +58,6 @@ void setup()
   lc.setIntensity(0,1);
   lc.setIntensity(1,1);
 
-  // clear both modules
-  lc.clearDisplay(0);
-  lc.clearDisplay(1);
- 
-  // LED test
-  // vertical line
-  byte b = B10000000;
-  for (int c=0; c<=7; c++)
-  {
-    for (int r=0; r<=7; r++)
-    {
-      setRow(0, r, b);
-      setRow(1, r, b);
-    }
-    b = b >> 1;
-    delay(50);
-  }
-  // full module
-  b = B11111111;
-  for (int r=0; r<=7; r++)
-  {
-    setRow(0, r, b);
-    setRow(1, r, b);
-  }
-  delay(500);
-  
    // clear both modules
   lc.clearDisplay(0);
   lc.clearDisplay(1);
