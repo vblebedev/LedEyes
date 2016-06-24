@@ -6,3 +6,11 @@
 Library LedControl
 
 https://github.com/wayoda/LedControl
+
+TestLed.ino
+
+Тест работы одного модуля MAX7219
+
+LedEyes.ino
+
+Сама программа "Глаза"
