@@ -1,6 +1,13 @@
 //We always have to include the LedControl library
 
-//FIXME: remove using this library
+/*
+FIXME: remove using this library
+functiond:
+ shutdown
+ setIntensity
+ clearDisplay
+ setRow
+*/
 #include "LedControl.h"
 
 /*
