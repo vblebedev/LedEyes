@@ -1,16 +1,12 @@
 # LedEyes
 
-Скетч для Arduino Nano. 
-Глаза на основе MAX7219.
+Sketch for Arduino Nano. 
+Led-eyes on MAX7219.
 
-Library LedControl
+*Library LedControl
 
 https://github.com/wayoda/LedControl
 
-TestLed.ino
+TestLed.ino - test sketch for simple module MAX7219
 
-Тест работы одного модуля MAX7219
-
-LedEyes.ino
-
-Сама программа "Глаза"
+LedEyes.ino - Sketch "Led Eyes"
