@@ -545,34 +545,22 @@ void setRow(int addr, int row, byte rowValue)
 
 /*
   Reverse bits in byte
-  http://www.nrtm.org/index.php/2013/07/25/reverse-bits-in-a-byte/
+  // TODO: 
+  #define INVERT_BYTE(a)   ((a&1)<<7) | ((a&2)<<5) | ((a&4)<<3) | ((a&8)<<1) | ((a&16)>>1) | ((a&32)>>3) | ((a&64)>>5) | ((a&128)>>7)
 */
-
-//FIXME: 
+ 
 byte bitswap (byte x)
 {
   byte result;
- 
-    asm("mov __tmp_reg__, %[in] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* shift out high bit to carry */
-      "ror %[out] \n\t"  /* rotate carry __tmp_reg__to low bit (eventually) */
-      "lsl __tmp_reg__  \n\t"   /* 2 */
-      "ror %[out] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* 3 */
-      "ror %[out] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* 4 */
-      "ror %[out] \n\t"
- 
-      "lsl __tmp_reg__  \n\t"   /* 5 */
-      "ror %[out] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* 6 */
-      "ror %[out] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* 7 */
-      "ror %[out] \n\t"
-      "lsl __tmp_reg__  \n\t"   /* 8 */
-      "ror %[out] \n\t"
-      : [out] "=r" (result) : [in] "r" (x));
-      return(result);
+  result = 0;
+  
+  for (int i=0; i<8; i++)
+  {
+   result = result << 1;
+   result = result | ((x >> i) & 1);
+  }
+
+  return(result);
 }
 
 
